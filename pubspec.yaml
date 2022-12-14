@@ -40,6 +40,7 @@ dependencies:
   http: ^0.13.5
   path: ^1.8.2
   pytorch_lite: ^1.1.2
+  pigeon: ^4.2.10
 
 dev_dependencies:
   flutter_test:
