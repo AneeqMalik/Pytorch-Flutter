@@ -39,8 +39,7 @@ dependencies:
   image_picker: ^0.8.6
   http: ^0.13.5
   path: ^1.8.2
-  pytorch_lite: ^1.1.2
-  pigeon: ^4.2.10
+  
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +51,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  # pigeon: ^4.2.10
+  pytorch_lite: ^1.1.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
