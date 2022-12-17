@@ -4,8 +4,8 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import 'package:pytorch_lite/pigeon.dart';
-import 'package:pytorch_lite/pytorch_lite.dart';
+import 'package:flutter_pytorch/pigeon.dart';
+import 'package:flutter_pytorch/flutter_pytorch.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
       //     pathImageModel, 224, 224,
       //     labelPath: "assets/labels/label_classification_imageNet.txt");
       //_customModel = await PytorchLite.loadCustomModel(pathCustomModel);
-      _objectModel = await PytorchLite.loadObjectDetectionModel(
+      _objectModel = await FlutterPytorch.loadObjectDetectionModel(
           pathObjectDetectionModel, 1, 640, 640,
           labelPath: "assets/cavity.txt");
     } catch (e) {
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
                 child: objDetect.isNotEmpty
                   ? _image == null
                       ? Text('No image selected.')
-                      : _objectModel.renderBoxesOnImage(_image!, objDetect)
+                      : _objectModel!.renderBoxesOnImage(_image!, objDetect)
                   : _image == null
                       ? Text('No image selected.')
                       : Image.file(_image!),
